@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xsettings" version="1.0">
+  <property name="Net" type="empty">
+    <property name="ThemeName" type="string" value="Adwaita-dark"/>
+    <property name="IconThemeName" type="string" value="Flat-Remix-Blue-Dark"/>
+  </property>
+  <property name="Xft" type="empty">
+    <property name="HintStyle" type="empty"/>
+    <property name="Hinting" type="empty"/>
+    <property name="RGBA" type="empty"/>
+    <property name="Antialias" type="int" value="1"/>
+  </property>
+  <property name="Gtk" type="empty">
+    <property name="FontName" type="string" value="Monospace 18"/>
+    <property name="MonospaceFontName" type="string" value="Monospace 14"/>
+    <property name="ButtonImages" type="empty"/>
+    <property name="MenuImages" type="empty"/>
+    <property name="DecorationLayout" type="string" value="menu:minimize,maximize,close"/>
+  </property>
+</channel>

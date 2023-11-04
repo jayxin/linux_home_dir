@@ -1,0 +1,8 @@
+#!/bin/bash
+
+git init
+git config --local user.name 'Tom'
+git config --local user.email 'hello@example.com'
+
+git config --local core.editor "vim"
+#git config --local core.sshCommand "ssh -i ~/.ssh/private_key"

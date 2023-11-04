@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -rpv --size-only -e 'ssh -p 1234' ~/workspace user@192.168.122.201:/storage/emulated/0/workspace

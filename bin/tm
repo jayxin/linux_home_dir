@@ -1,0 +1,9 @@
+#!/bin/bash
+
+tmux new-session -s apps -n proxy -c ~/Tool/Clash -d './clash -d .'
+
+#tmux new-session -s dev -n gpt -c ~/gpt_academic -d
+
+tmux new-window -n tex -c ~/tmp/tex
+
+tmux attach -t dev

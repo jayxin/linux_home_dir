@@ -1,0 +1,7 @@
+#!/bin/bash
+
+MEM=$(free | grep "Mem:" | tr -s " " " ")
+TOT=$(echo $MEM | cut -d " " -f 2)
+AVAI=$(echo $MEM | cut -d " " -f 7)
+
+python3 -c "print('%.0f' % ($AVAI/$TOT * 100))"
