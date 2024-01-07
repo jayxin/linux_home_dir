@@ -8,5 +8,5 @@ set recolor-darkcolor "#000000" # font
 
 # map j navigate
 
-set synctex true
-set synctex-editor-command "nvr --remote-silent %f -c %l"
+#set synctex true
+#set synctex-editor-command "nvr --remote-silent %f -c %l"
