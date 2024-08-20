@@ -28,10 +28,9 @@ export XDG_DATA_DIRS=/usr/share/xfce4:/usr/local/share/:/usr/share/:/usr/share
 /usr/bin/ibus-daemon -d -x -r &
 
 tigervncconfig -iconic &
-#"$SHELL" -l <<EOF
-#exec /etc/X11/Xsession "$@"
-#EOF
+"$SHELL" -l <<EOF
+exec /etc/X11/Xsession "$@"
+EOF
 
 #vncconfig -iconic &
 #dbus-launch --exit-with-session startxfce4
-dbus-launch --exit-with-session i3
