@@ -121,7 +121,7 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:  Terminal"
 set $ws2 "2:  Browser"
-set $ws3 "3"
+set $ws3 "3:  Documents"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -168,6 +168,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 for_window [class="Microsoft-edge"] move to workspace $ws2
 for_window [class="Google-chrome"] move to workspace $ws2
 for_window [class="Firefox-esr"] move to workspace $ws2
+for_window [class="firefox"] move to workspace $ws2
+for_window [class="sioyek"] move to workspace $ws3
 
 # }}}
 
@@ -264,7 +266,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # {{{ i3-gaps
-for_window [class="^.*"] border pixel 0
+#for_window [class="^.*"] border pixel 0
 gaps inner 8
 gaps outer 6
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -306,5 +308,7 @@ mode "$mode_gaps_outer" {
 # }}}
 
 bindsym $mod+x exec /home/$USER/.config/i3/scripts/lock
+
+bindsym $mod+Shift+p exec --no-startup-id scrot -d 3 -q 95 --format jpg
 
 # vim: foldmarker={{{,}}} fdm=marker
