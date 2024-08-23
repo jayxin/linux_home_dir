@@ -31,3 +31,10 @@ sudo apt install fonts-font-awesome
 ```bash
 sudo apt install alsa-utils
 ```
+
+## Notification daemon
+
+```bash
+sudo apt install dunst
+#notify-send -a dunst hello
+```

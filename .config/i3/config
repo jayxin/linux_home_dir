@@ -122,7 +122,7 @@ bindsym $mod+a focus parent
 set $ws1 "1:  Terminal"
 set $ws2 "2:  Browser"
 set $ws3 "3:  Documents"
-set $ws4 "4"
+set $ws4 "4:  VNC"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -165,13 +165,19 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # {{{ Allocate applications to workspaces
 
 # Using the xprop command to determine the value of class
-for_window [class="Microsoft-edge"] move to workspace $ws2
-for_window [class="Google-chrome"] move to workspace $ws2
-for_window [class="Firefox-esr"] move to workspace $ws2
-for_window [class="firefox"] move to workspace $ws2
-for_window [class="sioyek"] move to workspace $ws3
+for_window [class="Microsoft-edge"] move to workspace $ws2; workspace $ws2
+for_window [class="Google-chrome"] move to workspace $ws2; workspace $ws2
+for_window [class="Firefox-esr"] move to workspace $ws2; workspace $ws2
+for_window [class="firefox"] move to workspace $ws2; workspace $ws2
+for_window [class="sioyek"] move to workspace $ws3; workspace $ws3
+for_window [class="TigerVNC Viewer"] move to workspace $ws4
 
 # }}}
+
+for_window [all] title_window_icon on
+for_window [all] title_window_icon padding 3px
+
+#focus_on_window_activation urgent
 
 # }}}
 
@@ -237,8 +243,8 @@ client.urgent             $u-bgcolor    $u-bgcolor    $text      $u-bgcolor
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        #status_command i3status -c /home/$USER/.config/i3/i3status.conf
-        status_command i3blocks -c /home/$USER/.config/i3/i3blocks.conf
+        #status_command i3status -c $HOME/.config/i3/i3status.conf
+        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
 
         font pango: FontAwesome Regular 11
         #font pango: Droid Sans Mono 11
@@ -307,8 +313,10 @@ mode "$mode_gaps_outer" {
 }
 # }}}
 
-bindsym $mod+x exec /home/$USER/.config/i3/scripts/lock
+bindsym $mod+x exec $HOME/.config/i3/scripts/lock
 
 bindsym $mod+Shift+p exec --no-startup-id scrot -d 3 -q 95 --format jpg
+
+title_align center
 
 # vim: foldmarker={{{,}}} fdm=marker
